@@ -8,5 +8,5 @@
 import Foundation
 
 enum Errors: Error {
-    case invalidURL, invalidResponse, invalidData
+    case invalidURL, invalidResponse, invalidData, missingManagedObjectContext
 }

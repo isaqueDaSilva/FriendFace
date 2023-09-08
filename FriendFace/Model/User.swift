@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct User: Codable, Identifiable {
-    var id = UUID()
+struct UserModel: Codable, Identifiable {
+    var id: UUID
     var isActive: Bool
     let name: String
     let age: Int
@@ -18,5 +18,5 @@ struct User: Codable, Identifiable {
     let about: String
     let registered: Date
     let tags: [String]
-    let friends: [Friends]
+    let friends: [FriendsModel]
 }

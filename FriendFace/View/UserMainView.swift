@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserMainView: View {
     @StateObject var viewModel = UserMainViewModel()
-    let user: User
+    let user: UserModel
     
     var body: some View {
         ScrollView {

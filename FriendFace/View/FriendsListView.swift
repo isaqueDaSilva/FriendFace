@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendsListView: View {
-    let user: User
+    let user: UserModel
     
     var body: some View {
         List {

@@ -23,21 +23,15 @@ struct ContentView: View {
                     }
                 }
             }
-            .listStyle(.plain)
-            .navigationTitle("Friend Face")
             .task {
                 do {
                     try await viewModel.getUsers()
                 } catch {
-                    
+                    print("Falied to load User. Error: \(error)")
                 }
             }
+            .listStyle(.plain)
+            .navigationTitle("Friend Face")
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
