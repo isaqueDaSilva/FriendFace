@@ -20,7 +20,8 @@ extension ContentView {
         
         func getUsers() async throws {
             var usersDecoder = [UserModel]()
-            let apiURL = "https://www.hackingwithswift.com/samples/friendface.json"
+            let apiURL = "
+            "
             
             guard let url = URL(string: apiURL) else {
                 throw Errors.invalidURL

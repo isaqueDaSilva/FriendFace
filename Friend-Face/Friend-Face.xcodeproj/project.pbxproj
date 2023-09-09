@@ -25,6 +25,7 @@
 		7ED87AA12AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9B2AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift */; };
 		7ED87AA22AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9C2AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift */; };
 		7ED87AA32AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9D2AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift */; };
+		7ED87AA52AAC1FBB008D3E81 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87AA42AAC1FBB008D3E81 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		7ED87A9B2AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriends+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		7ED87A9C2AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTags+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		7ED87A9D2AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTags+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		7ED87AA42AAC1FBB008D3E81 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				7ED87A9D2AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift */,
 				7ED87A872AAC142C008D3E81 /* CoreDataManager.swift */,
 				7ED87A892AAC1475008D3E81 /* FriendFace.xcdatamodeld */,
+				7ED87AA42AAC1FBB008D3E81 /* Error.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				7ED87A7A2AAC1371008D3E81 /* HomeView.swift in Sources */,
 				7ED87A822AAC13F7008D3E81 /* UserDetailsViewModel.swift in Sources */,
 				7ED87A862AAC1416008D3E81 /* Friends.swift in Sources */,
+				7ED87AA52AAC1FBB008D3E81 /* Error.swift in Sources */,
 				7ED87AA12AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift in Sources */,
 				7ED87A7E2AAC13B4008D3E81 /* FriendListView.swift in Sources */,
 				7ED87A802AAC13E4008D3E81 /* HomeViewModel.swift in Sources */,
