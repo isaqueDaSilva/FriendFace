@@ -19,13 +19,11 @@
 		7ED87A862AAC1416008D3E81 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A852AAC1416008D3E81 /* Friends.swift */; };
 		7ED87A882AAC142C008D3E81 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A872AAC142C008D3E81 /* CoreDataManager.swift */; };
 		7ED87A8B2AAC1475008D3E81 /* FriendFace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A892AAC1475008D3E81 /* FriendFace.xcdatamodeld */; };
-		7ED87A9E2AAC16CD008D3E81 /* CachedUsers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A982AAC16CD008D3E81 /* CachedUsers+CoreDataClass.swift */; };
-		7ED87A9F2AAC16CD008D3E81 /* CachedUsers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A992AAC16CD008D3E81 /* CachedUsers+CoreDataProperties.swift */; };
-		7ED87AA02AAC16CD008D3E81 /* CachedFriends+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9A2AAC16CD008D3E81 /* CachedFriends+CoreDataClass.swift */; };
-		7ED87AA12AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9B2AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift */; };
-		7ED87AA22AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9C2AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift */; };
-		7ED87AA32AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87A9D2AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift */; };
 		7ED87AA52AAC1FBB008D3E81 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87AA42AAC1FBB008D3E81 /* Error.swift */; };
+		7ED87AA82AAC3A66008D3E81 /* CachedUsers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87AA62AAC3A66008D3E81 /* CachedUsers+CoreDataClass.swift */; };
+		7ED87AA92AAC3A66008D3E81 /* CachedUsers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87AA72AAC3A66008D3E81 /* CachedUsers+CoreDataProperties.swift */; };
+		7ED87AAB2AAC3E9E008D3E81 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87AAA2AAC3E9E008D3E81 /* NetworkManager.swift */; };
+		7ED87AAF2AAC4808008D3E81 /* Divisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED87AAE2AAC4808008D3E81 /* Divisor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +40,11 @@
 		7ED87A852AAC1416008D3E81 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		7ED87A872AAC142C008D3E81 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7ED87A8A2AAC1475008D3E81 /* FriendFace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendFace.xcdatamodel; sourceTree = "<group>"; };
-		7ED87A982AAC16CD008D3E81 /* CachedUsers+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUsers+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		7ED87A992AAC16CD008D3E81 /* CachedUsers+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUsers+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		7ED87A9A2AAC16CD008D3E81 /* CachedFriends+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriends+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		7ED87A9B2AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriends+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		7ED87A9C2AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTags+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		7ED87A9D2AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTags+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		7ED87AA42AAC1FBB008D3E81 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		7ED87AA62AAC3A66008D3E81 /* CachedUsers+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUsers+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		7ED87AA72AAC3A66008D3E81 /* CachedUsers+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUsers+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		7ED87AAA2AAC3E9E008D3E81 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7ED87AAE2AAC4808008D3E81 /* Divisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divisor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +66,7 @@
 				7ED87A642AAC103F008D3E81 /* View */,
 				7ED87A632AAC1036008D3E81 /* View-Model */,
 				7ED87A622AAC102A008D3E81 /* Manager */,
+				7ED87AAD2AAC47E2008D3E81 /* UI Components */,
 				7ED87A522AAC0F8F008D3E81 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,15 +100,12 @@
 		7ED87A622AAC102A008D3E81 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				7ED87A982AAC16CD008D3E81 /* CachedUsers+CoreDataClass.swift */,
-				7ED87A992AAC16CD008D3E81 /* CachedUsers+CoreDataProperties.swift */,
-				7ED87A9A2AAC16CD008D3E81 /* CachedFriends+CoreDataClass.swift */,
-				7ED87A9B2AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift */,
-				7ED87A9C2AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift */,
-				7ED87A9D2AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift */,
+				7ED87AA62AAC3A66008D3E81 /* CachedUsers+CoreDataClass.swift */,
+				7ED87AA72AAC3A66008D3E81 /* CachedUsers+CoreDataProperties.swift */,
 				7ED87A872AAC142C008D3E81 /* CoreDataManager.swift */,
 				7ED87A892AAC1475008D3E81 /* FriendFace.xcdatamodeld */,
 				7ED87AA42AAC1FBB008D3E81 /* Error.swift */,
+				7ED87AAA2AAC3E9E008D3E81 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -142,6 +136,14 @@
 				7ED87A852AAC1416008D3E81 /* Friends.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7ED87AAD2AAC47E2008D3E81 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				7ED87AAE2AAC4808008D3E81 /* Divisor.swift */,
+			);
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,20 +216,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED87AA32AAC16CD008D3E81 /* CachedTags+CoreDataProperties.swift in Sources */,
 				7ED87A552AAC0F8F008D3E81 /* Friend_FaceApp.swift in Sources */,
-				7ED87AA22AAC16CD008D3E81 /* CachedTags+CoreDataClass.swift in Sources */,
 				7ED87A882AAC142C008D3E81 /* CoreDataManager.swift in Sources */,
-				7ED87AA02AAC16CD008D3E81 /* CachedFriends+CoreDataClass.swift in Sources */,
-				7ED87A9E2AAC16CD008D3E81 /* CachedUsers+CoreDataClass.swift in Sources */,
 				7ED87A7A2AAC1371008D3E81 /* HomeView.swift in Sources */,
 				7ED87A822AAC13F7008D3E81 /* UserDetailsViewModel.swift in Sources */,
 				7ED87A862AAC1416008D3E81 /* Friends.swift in Sources */,
 				7ED87AA52AAC1FBB008D3E81 /* Error.swift in Sources */,
-				7ED87AA12AAC16CD008D3E81 /* CachedFriends+CoreDataProperties.swift in Sources */,
 				7ED87A7E2AAC13B4008D3E81 /* FriendListView.swift in Sources */,
 				7ED87A802AAC13E4008D3E81 /* HomeViewModel.swift in Sources */,
-				7ED87A9F2AAC16CD008D3E81 /* CachedUsers+CoreDataProperties.swift in Sources */,
+				7ED87AA92AAC3A66008D3E81 /* CachedUsers+CoreDataProperties.swift in Sources */,
+				7ED87AA82AAC3A66008D3E81 /* CachedUsers+CoreDataClass.swift in Sources */,
+				7ED87AAF2AAC4808008D3E81 /* Divisor.swift in Sources */,
+				7ED87AAB2AAC3E9E008D3E81 /* NetworkManager.swift in Sources */,
 				7ED87A7C2AAC137F008D3E81 /* UserDetailsView.swift in Sources */,
 				7ED87A8B2AAC1475008D3E81 /* FriendFace.xcdatamodeld in Sources */,
 				7ED87A842AAC140E008D3E81 /* Users.swift in Sources */,

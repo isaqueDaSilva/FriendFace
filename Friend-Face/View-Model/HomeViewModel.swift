@@ -10,15 +10,16 @@ import Foundation
 extension HomeView {
     class HomeViewModel: ObservableObject {
         let manager = CoreDataManager()
-        @Published var users = [CachedUsers]()
+        @Published var users = [Users]()
+        @Published var userByCoreData = [CachedUsers]()
         
-        @MainActor
-        func loadUsers() async {
-            self.users = await manager.users
+        func loadUsers() {
+            DispatchQueue.main.async {
+                self.userByCoreData = self.manager.users
+            }
         }
         
         func getUsers() async throws {
-            var usersDecoder = [Users]()
             let apiURL = "https://www.hackingwithswift.com/samples/friendface.json"
             
             guard let url = URL(string: apiURL) else {
@@ -35,31 +36,23 @@ extension HomeView {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 decoder.dateDecodingStrategy = .iso8601
-                usersDecoder = try decoder.decode([Users].self, from: data)
+                let usersDecoder = try decoder.decode([Users].self, from: data)
                 usersDecoder.forEach { user in
-                    Task {
-                        let usersSaved = CachedUsers(context: manager.context)
-                        usersSaved.id = user.id
-                        usersSaved.isActive = user.isActive
-                        usersSaved.name = user.name
-                        usersSaved.age = Int16(user.age)
-                        usersSaved.company = user.company
-                        usersSaved.email = user.email
-                        usersSaved.address = user.address
-                        usersSaved.about = user.about
-                        usersSaved.registered = user.registered
-                        user.tags.forEach { tag in
-                            Task {
-                                await manager.tagList(name: tag)
-                            }
-                        }
-                        user.friends.forEach { friend in
-                            Task {
-                                await manager.friendsList(id: friend.id, name: friend.name)
-                            }
-                        }
-                        await manager.save()
-                    }
+                    let usersSaved = CachedUsers(context: manager.context)
+                    usersSaved.id = user.id
+                    usersSaved.isActive = user.isActive
+                    usersSaved.name = user.name
+                    usersSaved.age = Int16(user.age)
+                    usersSaved.company = user.company
+                    usersSaved.email = user.email
+                    usersSaved.address = user.address
+                    usersSaved.about = user.about
+                    usersSaved.registered = user.registered
+                    manager.save()
+                    loadUsers()
+                }
+                DispatchQueue.main.async {
+                    self.users = usersDecoder
                 }
             } catch {
                 throw Errors.invalidData

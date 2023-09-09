@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct FriendListView: View {
+    let user: Users?
+    let userByCoreData: CachedUsers?
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct FriendListView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendListView()
     }
 }

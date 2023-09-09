@@ -2,7 +2,7 @@
 //  CachedUsers+CoreDataProperties.swift
 //  Friend-Face
 //
-//  Created by Isaque da Silva on 08/09/23.
+//  Created by Isaque da Silva on 09/09/23.
 //
 //
 
@@ -25,9 +25,7 @@ extension CachedUsers {
     @NSManaged public var address: String?
     @NSManaged public var about: String?
     @NSManaged public var registered: Date?
-    @NSManaged public var tags: NSSet?
-    @NSManaged public var friends: NSSet?
-    
+
     public var wrappedName: String {
         name ?? "Unknown Name"
     }
@@ -51,40 +49,6 @@ extension CachedUsers {
     public var wrappedregistered: Date {
         registered ?? Date.now
     }
-}
-
-// MARK: Generated accessors for tags
-extension CachedUsers {
-
-    @objc(addTagsObject:)
-    @NSManaged public func addToTags(_ value: CachedTags)
-
-    @objc(removeTagsObject:)
-    @NSManaged public func removeFromTags(_ value: CachedTags)
-
-    @objc(addTags:)
-    @NSManaged public func addToTags(_ values: NSSet)
-
-    @objc(removeTags:)
-    @NSManaged public func removeFromTags(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for friends
-extension CachedUsers {
-
-    @objc(addFriendsObject:)
-    @NSManaged public func addToFriends(_ value: CachedFriends)
-
-    @objc(removeFriendsObject:)
-    @NSManaged public func removeFromFriends(_ value: CachedFriends)
-
-    @objc(addFriends:)
-    @NSManaged public func addToFriends(_ values: NSSet)
-
-    @objc(removeFriends:)
-    @NSManaged public func removeFromFriends(_ values: NSSet)
-
 }
 
 extension CachedUsers : Identifiable {

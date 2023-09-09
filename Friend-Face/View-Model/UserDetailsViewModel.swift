@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension UserDetailsView {
+    class UserDetailsViewModel: ObservableObject {
+        var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter
+        }
+    }
+}

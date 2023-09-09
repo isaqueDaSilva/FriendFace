@@ -2,7 +2,7 @@
 //  CachedUsers+CoreDataClass.swift
 //  Friend-Face
 //
-//  Created by Isaque da Silva on 08/09/23.
+//  Created by Isaque da Silva on 09/09/23.
 //
 //
 

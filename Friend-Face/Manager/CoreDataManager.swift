@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-actor CoreDataManager {
+class CoreDataManager {
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
     var users = [CachedUsers]()
@@ -30,18 +30,6 @@ actor CoreDataManager {
         } catch let error {
             print("Falied to save User in Data Model. Error: \(error)")
         }
-    }
-    
-    func friendsList(id: UUID, name: String) {
-        let friends = CachedFriends(context: context)
-        friends.id = id
-        friends.name = name
-        save()
-    }
-    
-    func tagList(name: String) {
-        let tags = CachedTags(context: context)
-        tags.name = name
     }
     
     init() {
