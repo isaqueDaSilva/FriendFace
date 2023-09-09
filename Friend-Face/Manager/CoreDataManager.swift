@@ -40,6 +40,7 @@ class CoreDataManager {
             if let error = error {
                 print("Falied to load User. Error: \(error)")
             }
+            self.context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         }
     }
 }

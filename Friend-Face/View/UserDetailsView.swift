@@ -54,7 +54,6 @@ struct UserDetailsView: View {
                     .padding(.horizontal)
                 
                 Text(user != nil ? user?.about ?? "" : userByCoreData?.wrappedAbout ?? "")
-                .font(.headline.bold())
                 .padding(.horizontal)
             }
             
@@ -65,7 +64,7 @@ struct UserDetailsView: View {
             VStack(alignment: .leading) {
                 Text("Tags:")
                     .font(.title2.bold())
-                    .padding([.horizontal, .bottom])
+                    .padding(.bottom)
                 if user != nil {
                     ScrollView(.horizontal) {
                         HStack {
@@ -84,6 +83,7 @@ struct UserDetailsView: View {
                     }
                 } else {
                     Text("Connect the internet to get that user's tags!")
+                        .font(.callout.bold())
                 }
             }
 
@@ -93,9 +93,7 @@ struct UserDetailsView: View {
             
             // Friend List
             NavigationLink {
-                if user != nil {
-                    FriendListView(user: user, userByCoreData: nil)
-                }
+                FriendListView(user: user)
             } label: {
                 HStack {
                     Text("Friends")

@@ -12,12 +12,12 @@ struct FriendsListView: View {
     
     var body: some View {
         List {
-//            ForEach(user.friends) { friend in
-//                HStack {
-//                    Text(friend.name)
-//                        .font(.headline.bold())
-//                }
-//            }
+            ForEach(user.friends) { friend in
+                HStack {
+                    Text(friend.name)
+                        .font(.headline.bold())
+                }
+            }
         }
         .listStyle(.plain)
         .navigationTitle("Friend List")

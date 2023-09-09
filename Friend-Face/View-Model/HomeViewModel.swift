@@ -48,6 +48,7 @@ extension HomeView {
                     usersSaved.address = user.address
                     usersSaved.about = user.about
                     usersSaved.registered = user.registered
+                    manager.users.removeAll()
                     manager.save()
                     loadUsers()
                 }

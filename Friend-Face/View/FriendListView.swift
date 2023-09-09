@@ -9,8 +9,30 @@ import SwiftUI
 
 struct FriendListView: View {
     let user: Users?
-    let userByCoreData: CachedUsers?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            if user != nil {
+                List {
+                    ForEach(user?.friends ?? []) { friend in
+                        HStack {
+                            Text(friend.name)
+                                .font(.headline.bold())
+                        }
+                    }
+                }
+                .listStyle(.plain)
+                .navigationTitle("Friend List")
+                .navigationBarTitleDisplayMode(.inline)
+            } else {
+                VStack {
+                    Image(systemName: "wifi.slash")
+                        .font(.system(size: 30))
+                        .padding()
+                    Text("It is not possible to get the friends list offline.")
+                        .font(.callout.bold())
+                }
+            }
+        }
     }
 }
