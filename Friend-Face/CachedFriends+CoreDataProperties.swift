@@ -1,6 +1,6 @@
 //
-//  Friend+CoreDataProperties.swift
-//  FriendFace
+//  CachedFriends+CoreDataProperties.swift
+//  Friend-Face
 //
 //  Created by Isaque da Silva on 08/09/23.
 //
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Friend {
+extension CachedFriends {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Friend> {
-        return NSFetchRequest<Friend>(entityName: "Friend")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CachedFriends> {
+        return NSFetchRequest<CachedFriends>(entityName: "CachedFriends")
     }
 
     @NSManaged public var id: UUID?
@@ -23,21 +23,16 @@ extension Friend {
     public var wrappedName: String {
         name ?? ""
     }
-    
-    public var wrappedUser: [User] {
-        let setArray = user as? Set<User> ?? []
-        return setArray.sorted { $0.wrappedName < $1.wrappedName }
-    }
 }
 
 // MARK: Generated accessors for user
-extension Friend {
+extension CachedFriends {
 
     @objc(addUserObject:)
-    @NSManaged public func addToUser(_ value: User)
+    @NSManaged public func addToUser(_ value: CachedUsers)
 
     @objc(removeUserObject:)
-    @NSManaged public func removeFromUser(_ value: User)
+    @NSManaged public func removeFromUser(_ value: CachedUsers)
 
     @objc(addUser:)
     @NSManaged public func addToUser(_ values: NSSet)
@@ -47,6 +42,6 @@ extension Friend {
 
 }
 
-extension Friend : Identifiable {
+extension CachedFriends : Identifiable {
 
 }

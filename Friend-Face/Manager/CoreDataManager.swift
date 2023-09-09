@@ -1,8 +1,8 @@
 //
 //  CoreDataManager.swift
-//  FriendFace
+//  Friend-Face
 //
-//  Created by Isaque da Silva on 07/09/23.
+//  Created by Isaque da Silva on 08/09/23.
 //
 
 import CoreData
@@ -11,14 +11,14 @@ import Foundation
 actor CoreDataManager {
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
-    var users = [User]()
+    var users = [CachedUsers]()
     
-    func fetchUser() {
-        let request = NSFetchRequest<User>(entityName: "User")
+    func fetchUsers() {
+        let request = NSFetchRequest<CachedUsers>(entityName: "CachedUsers")
         
         do {
             users = try context.fetch(request)
-        } catch {
+        } catch let error {
             print("Falied to Fetch User in Data Model. Error: \(error)")
         }
     }
@@ -26,23 +26,23 @@ actor CoreDataManager {
     func save() {
         do {
             try context.save()
-            fetchUser()
+            fetchUsers()
         } catch let error {
             print("Falied to save User in Data Model. Error: \(error)")
         }
     }
     
     func friendsList(id: UUID, name: String) {
-        let friend = Friend(context: context)
-        friend.id = id
-        friend.name = name
+        let friends = CachedFriends(context: context)
+        friends.id = id
+        friends.name = name
         save()
     }
     
-//    func tagList(tag: String) {
-//        let tags = Tag(context: context)
-//        tags.name = wra
-//    }
+    func tagList(name: String) {
+        let tags = CachedTags(context: context)
+        tags.name = name
+    }
     
     init() {
         container = NSPersistentContainer(name: "FriendFace")

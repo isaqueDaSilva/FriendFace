@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserMainView: View {
     @StateObject var viewModel = UserMainViewModel()
-    let user: UserModel
+    let user: User
     
     var body: some View {
         ScrollView {
@@ -27,14 +27,14 @@ struct UserMainView: View {
                     }
                     .frame(maxWidth: 100)
                     
-                    Text(user.name)
+                    Text(user.wrappedName)
                         .font(.headline.bold())
                 }
                 .padding(.horizontal)
                 VStack(alignment: .leading) {
-                    Text("\(user.age) years / \(user.company)")
+                    Text("\(user.age) years / \(user.wrappedCompany)")
                         .font(.subheadline.bold())
-                    Text(user.address)
+                    Text(user.wrappedAddress)
                         .font(.subheadline.bold())
                     Text("\(user.isActive ? "Online" : "Offline")")
                         .font(.headline)
@@ -52,7 +52,7 @@ struct UserMainView: View {
                     .font(.title2.bold())
                     .padding(.horizontal)
                 
-                Text(user.about)
+                Text(user.wrappedAbout)
                 .font(.headline.bold())
                 .padding(.horizontal)
             }
@@ -65,21 +65,21 @@ struct UserMainView: View {
                 Text("Tags:")
                     .font(.title2.bold())
                     .padding([.horizontal, .bottom])
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(user.tags, id: \.self) {
-                            Text($0)
-                                .font(.caption)
-                                .fontWeight(.black)
-                                .padding(8)
-                                .foregroundColor(.white)
-                                .background(.black.opacity(0.75))
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .padding(.bottom)
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+//                ScrollView(.horizontal) {
+//                    HStack {
+//                        ForEach(user.tags, id: \.self) {
+//                            Text($0.wr)
+//                                .font(.caption)
+//                                .fontWeight(.black)
+//                                .padding(8)
+//                                .foregroundColor(.white)
+//                                .background(.black.opacity(0.75))
+//                                .clipShape(RoundedRectangle(cornerRadius: 10))
+//                                .padding(.bottom)
+//                        }
+//                    }
+//                    .padding(.horizontal)
+//                }
             }
 
             
@@ -94,8 +94,8 @@ struct UserMainView: View {
                     Text("Friends")
                         .font(.headline)
                     Spacer()
-                    Text("\(user.friends.count)")
-                        .font(.headline.bold())
+//                    Text("\(user.friends.count)")
+//                        .font(.headline.bold())
                 }
                 .padding()
                 .foregroundColor(.white)
@@ -105,7 +105,7 @@ struct UserMainView: View {
             }
             
             // Registrado em:
-            Text("Join in: \(viewModel.dateFormatter.string(from: user.registered))")
+            Text("Join in: \(viewModel.dateFormatter.string(from: user.wrappedregistered))")
                 .font(.headline)
                 .foregroundColor(.black.opacity(0.5))
                 .padding(.top)

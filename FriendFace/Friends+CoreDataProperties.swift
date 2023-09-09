@@ -1,5 +1,5 @@
 //
-//  Tags+CoreDataProperties.swift
+//  Friends+CoreDataProperties.swift
 //  FriendFace
 //
 //  Created by Isaque da Silva on 08/09/23.
@@ -10,19 +10,20 @@ import Foundation
 import CoreData
 
 
-extension Tags {
+extension Friends {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Tags> {
-        return NSFetchRequest<Tags>(entityName: "Tags")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Friends> {
+        return NSFetchRequest<Friends>(entityName: "Friends")
     }
 
+    @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var user: NSSet?
 
 }
 
 // MARK: Generated accessors for user
-extension Tags {
+extension Friends {
 
     @objc(addUserObject:)
     @NSManaged public func addToUser(_ value: Users)
@@ -38,6 +39,6 @@ extension Tags {
 
 }
 
-extension Tags : Identifiable {
+extension Friends : Identifiable {
 
 }

@@ -18,17 +18,14 @@ struct ContentView: View {
                     } label: {
                         HStack {
                             Text("\(user.isActive ? "😎" : "😴")")
-                            Text(user.name)
+                            Text(user.wrappedName)
                         }
                     }
                 }
             }
             .task {
-                do {
-                    try await viewModel.getUsers()
-                } catch {
-                    print("Falied to load User. Error: \(error)")
-                }
+                await viewModel.manager.fetchUser()
+                print("Carregado do Core Data")
             }
             .listStyle(.plain)
             .navigationTitle("Friend Face")
