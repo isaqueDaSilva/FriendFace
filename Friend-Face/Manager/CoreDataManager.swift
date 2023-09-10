@@ -8,28 +8,32 @@
 import CoreData
 import Foundation
 
-class CoreDataManager {
+actor CoreDataManager {
+    static let shared = CoreDataManager()
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
-    var users = [CachedUsers]()
-    
-    func fetchUsers() {
-        let request = NSFetchRequest<CachedUsers>(entityName: "CachedUsers")
-        
-        do {
-            users = try context.fetch(request)
-        } catch let error {
-            print("Falied to Fetch User in Data Model. Error: \(error)")
-        }
-    }
+
     
     func save() {
         do {
             try context.save()
-            fetchUsers()
         } catch let error {
             print("Falied to save User in Data Model. Error: \(error)")
         }
+    }
+    
+    func saveUsers(_ user: Users) {
+        let usersSaved = CachedUsers(context: context)
+        usersSaved.id = user.id
+        usersSaved.isActive = user.isActive
+        usersSaved.name = user.name
+        usersSaved.age = Int16(user.age)
+        usersSaved.company = user.company
+        usersSaved.email = user.email
+        usersSaved.address = user.address
+        usersSaved.about = user.about
+        usersSaved.registered = user.registered
+        save()
     }
     
     init() {
@@ -40,7 +44,7 @@ class CoreDataManager {
             if let error = error {
                 print("Falied to load User. Error: \(error)")
             }
-            self.context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
-        }
+        }        
+        self.context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
     }
 }

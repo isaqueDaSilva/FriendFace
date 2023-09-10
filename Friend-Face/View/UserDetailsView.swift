@@ -62,10 +62,12 @@ struct UserDetailsView: View {
             
             // User Tags
             VStack(alignment: .leading) {
-                Text("Tags:")
-                    .font(.title2.bold())
-                    .padding(.bottom)
                 if user != nil {
+                    VStack {
+                        Text("Tags:")
+                            .font(.title2.bold())
+                            .padding([.bottom, .horizontal])
+                    }
                     ScrollView(.horizontal) {
                         HStack {
                             ForEach(user?.tags ?? [], id: \.self) {
@@ -82,8 +84,14 @@ struct UserDetailsView: View {
                         .padding(.horizontal)
                     }
                 } else {
-                    Text("Connect the internet to get that user's tags!")
-                        .font(.callout.bold())
+                    VStack {
+                        Image(systemName: "wifi.slash")
+                            .font(.system(size: 30))
+                            .padding()
+                        Text("Connect to the internet to get that user's tags!")
+                            .font(.callout.bold())
+                            .padding()
+                    }
                 }
             }
 

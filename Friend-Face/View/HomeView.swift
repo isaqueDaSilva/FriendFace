@@ -16,8 +16,6 @@ struct HomeView: View {
             } else {
                 HomeViewOffline()
             }
-            
-            
         }
     }
 }
@@ -39,10 +37,12 @@ struct HomeViewOnline: View {
                 }
             }
             .task {
-                do {
-                    try await viewModel.getUsers()
-                } catch let error {
-                    print("Failed to load users. Error: \(error)")
+                if viewModel.users.isEmpty {
+                    do {
+                        try await viewModel.getUsers()
+                    } catch let error {
+                        print("Failed to load users. Error: \(error)")
+                    }
                 }
             }
             .navigationTitle("Friend Face")
@@ -57,7 +57,7 @@ struct HomeViewOffline: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.userByCoreData) { user in
+                ForEach(viewModel.usersByCoreData) { user in
                     NavigationLink {
                         UserDetailsView(user: nil, userByCoreData: user)
                     } label: {
@@ -69,7 +69,7 @@ struct HomeViewOffline: View {
                 }
             }
             .onAppear {
-                viewModel.manager.fetchUsers()
+                viewModel.fetchUsers()
             }
             .navigationTitle("Friend Face")
             .listStyle(.plain)

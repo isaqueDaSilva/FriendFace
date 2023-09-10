@@ -5,17 +5,25 @@
 //  Created by Isaque da Silva on 08/09/23.
 //
 
+import CoreData
 import Foundation
 
 extension HomeView {
     class HomeViewModel: ObservableObject {
-        let manager = CoreDataManager()
+        let manager = CoreDataManager.shared
         @Published var users = [Users]()
-        @Published var userByCoreData = [CachedUsers]()
+        @Published var usersByCoreData = [CachedUsers]()
         
-        func loadUsers() {
-            DispatchQueue.main.async {
-                self.userByCoreData = self.manager.users
+        func fetchUsers() {
+            let request = NSFetchRequest<CachedUsers>(entityName: "CachedUsers")
+            
+            do {
+                let user = try manager.context.fetch(request)
+                DispatchQueue.main.async {
+                    self.usersByCoreData = user
+                }
+            } catch let error {
+                print("Falied to Fetch User in Data Model. Error: \(error)")
             }
         }
         
@@ -37,32 +45,19 @@ extension HomeView {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 decoder.dateDecodingStrategy = .iso8601
                 let usersDecoder = try decoder.decode([Users].self, from: data)
+                DispatchQueue.main.async {
+                    self.usersByCoreData.removeAll()
+                }
                 usersDecoder.forEach { user in
-                    let usersSaved = CachedUsers(context: manager.context)
-                    usersSaved.id = user.id
-                    usersSaved.isActive = user.isActive
-                    usersSaved.name = user.name
-                    usersSaved.age = Int16(user.age)
-                    usersSaved.company = user.company
-                    usersSaved.email = user.email
-                    usersSaved.address = user.address
-                    usersSaved.about = user.about
-                    usersSaved.registered = user.registered
-                    manager.users.removeAll()
-                    manager.save()
-                    loadUsers()
+                    Task {
+                        await manager.saveUsers(user)
+                    }
                 }
                 DispatchQueue.main.async {
                     self.users = usersDecoder
                 }
             } catch {
                 throw Errors.invalidData
-            }
-        }
-        
-        init() {
-            Task {
-                try await getUsers()
             }
         }
     }
